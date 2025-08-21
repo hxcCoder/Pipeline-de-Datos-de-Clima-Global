@@ -35,9 +35,9 @@ if __name__ == "__main__":
         print("---------------------------")
 
         # Paso 3: Carga de datos en la nube
-        project_id = "proyecto-469709"
-        dataset_id = "clima_urbano_pipeline"
-        table_name = "datos_clima_santiago" # O 'datos_clima_global'
+        project_id = "tu-proyecto"
+        dataset_id = "tu-dataset"
+        table_name = "tu-tabla" # O 'datos_clima_global'
         table_id = f"{project_id}.{dataset_id}.{table_name}"
         
         load_data_to_bigquery(final_df, table_id, project_id)

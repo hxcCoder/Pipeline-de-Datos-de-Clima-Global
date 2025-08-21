@@ -1,0 +1,34 @@
+# Archivos de entorno y credenciales (¡MUY IMPORTANTE!)
+# No subir tus claves API, contraseñas, etc.
+.env
+.flaskenv
+*.env
+
+# Archivos de la cache de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Directorios de entornos virtuales
+venv/
+env/
+.venv/
+.virtual_env/
+
+# Directorios y archivos específicos del sistema operativo
+.DS_Store # macOS
+.vscode/ # Configuración de VS Code (opcional si es personal)
+Thumbs.db # Windows
+
+# Archivos de Jupyter (opcional si usas notebooks)
+.ipynb_checkpoints
+
+# Archivos de logs y resultados generados por el script
+logs/
+*.log
+*.sqlite
+*.db
+
+# Directorios de datos (opcional, si no quieres subir los datos)
+data/
+data_test/
