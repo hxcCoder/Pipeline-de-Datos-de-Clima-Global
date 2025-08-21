@@ -1,48 +1,72 @@
-##🚀 Global Weather Data Pipeline
+# 🌍 Global Weather Data Pipeline
 
-###📋 Resumen del Proyecto
-Este proyecto es un pipeline de datos automatizado diseñado para extraer, transformar y cargar (ETL) datos de clima en tiempo real de múltiples ciudades alrededor del mundo. La información procesada se almacena en Google BigQuery, una base de datos en la nube, para su posterior análisis y visualización.
+### 📋 Resumen del Proyecto
+Este proyecto implementa un **pipeline de datos automatizado (ETL)** para extraer, transformar y cargar información meteorológica en tiempo real de múltiples ciudades alrededor del mundo.  
 
-El objetivo principal es demostrar la capacidad de construir una solución de datos de extremo a extremo, desde la adquisición de datos de una API hasta la presentación de resultados en un dashboard interactivo.
+Los datos son almacenados en **Google BigQuery** y posteriormente analizados mediante un **dashboard interactivo en Power BI**.  
 
-###⚙️ Arquitectura del Pipeline
-El sistema opera a través de un proceso de tres etapas:
+El objetivo principal es **demostrar una solución de datos de extremo a extremo**, desde la adquisición de datos vía API hasta la presentación visual para la toma de decisiones.  
 
-Extract (Extracción): El script se conecta a la API de OpenWeatherMap para obtener datos crudos y en tiempo real de una lista predefinida de ciudades.
+---
 
-Transform (Transformación): Los datos JSON son procesados y estandarizados utilizando Pandas. Los datos de todas las ciudades son unificados en un solo DataFrame, listo para su almacenamiento.
+## ⚙️ Arquitectura del Pipeline
+El sistema se compone de tres etapas principales:
 
-Load (Carga): El DataFrame final se carga en una tabla de Google BigQuery. La autenticación se maneja de forma segura usando la CLI de Google Cloud, eliminando la necesidad de claves en el código.
+1. **Extract (Extracción)**  
+   - Conexión a la API de **OpenWeatherMap**.  
+   - Obtención de datos en tiempo real para una lista predefinida de ciudades.  
 
-📈 Resultados y Dashboard de Análisis
-El producto final del pipeline es un dashboard interactivo en Power BI que permite analizar y comparar la temperatura, humedad y velocidad del viento de las diferentes ciudades.
+2. **Transform (Transformación)**  
+   - Procesamiento de datos en formato **JSON** utilizando **Pandas**.  
+   - Normalización y unificación en un único **DataFrame**.  
 
-Puedes ver el dashboard completo en formato PDF: Ver Dashboard Completo en PDF
+3. **Load (Carga)**  
+   - Carga del DataFrame en **Google BigQuery**.  
+   - Autenticación gestionada de forma segura mediante **Google Cloud CLI** (sin exponer claves en el código).  
 
-🛠️ Tecnologías Utilizadas
-Python: Lenguaje principal.
+---
 
-Pandas: Manipulación y transformación de datos.
+## 📊 Resultados y Dashboard
+El producto final incluye un **dashboard interactivo en Power BI** con métricas como:  
 
-Requests: Para interactuar con la API.
+- 🌡️ **Temperatura**  
+- 💧 **Humedad**  
+- 🌬️ **Velocidad del viento**  
 
-Google BigQuery: Almacenamiento de datos en la nube.
+📑 Puedes ver el dashboard completo aquí:  
+👉 [Dashboard en PDF](./Dashboard_Clima.pdf)  
 
-Google Cloud CLI: Autenticación.
+---
 
-Power BI: Visualización y análisis de datos.
+## 🛠️ Tecnologías Utilizadas
+- **Python** → Lenguaje principal.  
+- **Pandas** → Limpieza y transformación de datos.  
+- **Requests** → Consumo de la API.  
+- **Google BigQuery** → Almacenamiento en la nube.  
+- **Google Cloud CLI** → Autenticación.  
+- **Power BI** → Visualización y análisis.  
+- **Git & GitHub** → Control de versiones y colaboración.  
 
-Git & GitHub: Control de versiones.
+---
 
-🚀 Guía de Inicio Rápido
-Para ejecutar este proyecto localmente, sigue estos pasos:
+## 🚀 Guía de Inicio Rápido
+Ejecuta el proyecto en tu entorno local siguiendo estos pasos:
 
-Clona el repositorio: git clone https://github.com/tu_usuario/tu_repositorio.git
+```bash
+# 1. Clona el repositorio
+git clone https://github.com/tu_usuario/tu_repositorio.git
+cd tu_repositorio
 
-Instala las dependencias: pip install -r requirements.txt
+# 2. Instala las dependencias
+pip install -r requirements.txt
 
-Configura tu clave de API: Crea un archivo .env en la raíz del proyecto y añade tu clave: OPENWEATHER_API_KEY="tu_clave_aqui"
+# 3. Configura tu clave de API en un archivo .env
+echo OPENWEATHER_API_KEY="tu_clave_aqui" > .env
 
-Autentica con Google Cloud: Asegúrate de que tu gcloud CLI esté autenticado.
+# 4. Autentica Google Cloud CLI
+gcloud auth login
 
-Ejecuta el pipeline: python main.py
+# 5. Ejecuta el pipeline
+python main.py
+
+
