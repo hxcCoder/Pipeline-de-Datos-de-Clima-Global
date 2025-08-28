@@ -1,72 +1,71 @@
 # 🌍 Global Weather Data Pipeline
 
-### 📋 Resumen del Proyecto
-Este proyecto implementa un **pipeline de datos automatizado (ETL)** para extraer, transformar y cargar información meteorológica en tiempo real de múltiples ciudades alrededor del mundo.  
+### 📋 Project Overview
+This project implements an automated data pipeline (ETL) to extract, transform, and load real-time weather data from multiple cities around the world.
 
-Los datos son almacenados en **Google BigQuery** y posteriormente analizados mediante un **dashboard interactivo en Power BI**.  
+The data is stored in Google BigQuery and subsequently analyzed using an interactive Power BI dashboard.
 
-El objetivo principal es **demostrar una solución de datos de extremo a extremo**, desde la adquisición de datos vía API hasta la presentación visual para la toma de decisiones.  
+The main objective is to demonstrate an end-to-end data solution, from data acquisition via API to visual presentation for decision-making.
+
+---
+## ⚙️ Pipeline Architecture
+The system consists of three main stages:
+
+1. **Extract**
+- Connection to the **OpenWeatherMap** API.
+- Obtaining real-time data for a predefined list of cities.
+
+2. **Transform**
+- Processing data in **JSON** format using **Pandas**.
+- Normalization and unification into a single **DataFrame**.
+
+3. **Load**
+- Loading the DataFrame into **Google BigQuery**.
+- Authentication managed securely using the **Google Cloud CLI** (without exposing keys in the code).
 
 ---
 
-## ⚙️ Arquitectura del Pipeline
-El sistema se compone de tres etapas principales:
+## 📊 Results and Dashboard
+The final product includes an interactive Power BI dashboard with metrics such as:
 
-1. **Extract (Extracción)**  
-   - Conexión a la API de **OpenWeatherMap**.  
-   - Obtención de datos en tiempo real para una lista predefinida de ciudades.  
+- 🌡️ **Temperature**
+- 💧 **Humidity**
+- 🌬️ **Wind Speed**
 
-2. **Transform (Transformación)**  
-   - Procesamiento de datos en formato **JSON** utilizando **Pandas**.  
-   - Normalización y unificación en un único **DataFrame**.  
-
-3. **Load (Carga)**  
-   - Carga del DataFrame en **Google BigQuery**.  
-   - Autenticación gestionada de forma segura mediante **Google Cloud CLI** (sin exponer claves en el código).  
+📑 You can view the full dashboard here:
+👉 [PDF Dashboard](./Dashboard_Clima.pdf)
 
 ---
 
-## 📊 Resultados y Dashboard
-El producto final incluye un **dashboard interactivo en Power BI** con métricas como:  
-
-- 🌡️ **Temperatura**  
-- 💧 **Humedad**  
-- 🌬️ **Velocidad del viento**  
-
-📑 Puedes ver el dashboard completo aquí:  
-👉 [Dashboard en PDF](./Dashboard_Clima.pdf)  
-
----
-
-## 🛠️ Tecnologías Utilizadas
-- **Python** → Lenguaje principal.  
-- **Pandas** → Limpieza y transformación de datos.  
-- **Requests** → Consumo de la API.  
-- **Google BigQuery** → Almacenamiento en la nube.  
-- **Google Cloud CLI** → Autenticación.  
-- **Power BI** → Visualización y análisis.  
-- **Git & GitHub** → Control de versiones y colaboración.  
+## 🛠️ Technologies Used
+- **Python** → Main language.
+- **Pandas** → Data cleansing and transformation.
+- **Requests** → API consumption.
+- **Google BigQuery** → Cloud storage.
+- **Google Cloud CLI** → Authentication.
+- **Power BI** → Visualization and analysis.
+- **Git & GitHub** → Version control and collaboration.
 
 ---
 
-## 🚀 Guía de Inicio Rápido
-Ejecuta el proyecto en tu entorno local siguiendo estos pasos:
+## 🚀 Quick Start Guide
+Run the project in your local environment by following these steps:
 
 ```bash
-# 1. Clona el repositorio
-git clone https://github.com/tu_usuario/tu_repositorio.git
-cd tu_repositorio
+# 1. Clone the repository
+git clone https://github.com/your_user/your_repository.git
+cd your_repository
 
-# 2. Instala las dependencias
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Configura tu clave de API en un archivo .env
-echo OPENWEATHER_API_KEY="tu_clave_aqui" > .env
+# 3. Set your API key in an .env file
+echo OPENWEATHER_API_KEY="your_key_here" > .env
 
-# 4. Autentica Google Cloud CLI
+# 4. Authenticate Google Cloud CLI
 gcloud auth login
 
-# 5. Ejecuta el pipeline
+# 5. Run the pipeline
 python main.py
 
 
